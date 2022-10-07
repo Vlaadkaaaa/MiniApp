@@ -6,7 +6,7 @@
 //
 
 import UIKit
-///
+/// Корзина товаров
 final class BasketViewController: UIViewController {
 
     override func viewDidLoad() {

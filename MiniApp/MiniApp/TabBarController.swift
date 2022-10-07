@@ -8,7 +8,7 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
-
+    
     private let buyVC = BuyViewController()
     private let forYouVC = ForYouViewController()
     private let searchVC = SearchViewController()
@@ -25,8 +25,8 @@ final class TabBarController: UITabBarController {
         self.setViewControllers([buyVC, forYouVC, searchVC, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: "Купить",
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
-            forYouVC.tabBarItem = UITabBarItem(title: "Для вас",
-                                               image: UIImage(systemName: "person.crop.circle"), tag: 1)
+        forYouVC.tabBarItem = UITabBarItem(title: "Для вас",
+                                           image: UIImage(systemName: "person.crop.circle"), tag: 1)
         searchVC.tabBarItem = UITabBarItem(title: "Поиск", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         basketVC.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(systemName: "bag"), tag: 3)
     }

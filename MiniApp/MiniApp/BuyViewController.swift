@@ -6,7 +6,7 @@
 //
 
 import UIKit
-///
+/// Покупки
 final class BuyViewController: UIViewController {
 
     override func viewDidLoad() {

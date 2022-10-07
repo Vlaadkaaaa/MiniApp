@@ -6,7 +6,7 @@
 //
 
 import UIKit
-///
+/// Для вас
 final class ForYouViewController: UIViewController {
 
     override func viewDidLoad() {
