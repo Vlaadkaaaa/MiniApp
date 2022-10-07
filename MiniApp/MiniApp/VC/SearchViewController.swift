@@ -213,7 +213,7 @@ final class SearchViewController: UIViewController {
         let detailsVC = DetaisViewController()
         detailsVC.label.text = title
         detailsVC.image.image = UIImage(named: image)
-        present(detailsVC, animated: true)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     private func setupUI() {

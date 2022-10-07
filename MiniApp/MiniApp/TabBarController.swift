@@ -22,7 +22,8 @@ final class TabBarController: UITabBarController {
         setupUI()
     }
     func setupUI() {
-        self.setViewControllers([buyVC, forYouVC, searchVC, basketVC], animated: true)
+        let navController = UINavigationController(rootViewController: searchVC)
+        self.setViewControllers([buyVC, forYouVC, navController, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: "Купить",
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
         forYouVC.tabBarItem = UITabBarItem(title: "Для вас",
