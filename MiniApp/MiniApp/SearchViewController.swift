@@ -94,7 +94,6 @@ final class SearchViewController: UIViewController {
     private let imageOne: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 30, y: 300, width: 110, height: 80))
         image.contentMode = .scaleAspectFit
-        
         image.image = UIImage(named: Constants.oneItemImageName)
         return image
     }()
