@@ -9,6 +9,7 @@ import UIKit
 /// Покупки
 final class BuyViewController: UIViewController {
 
+    // MARK: - Life Cucle
     override func viewDidLoad() {
         super.viewDidLoad()
         

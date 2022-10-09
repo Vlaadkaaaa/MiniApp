@@ -9,6 +9,7 @@ import UIKit
 /// Корзина товаров
 final class BasketViewController: UIViewController {
 
+    // MARK: - Life Cucle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

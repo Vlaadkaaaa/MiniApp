@@ -28,7 +28,7 @@ final class SearchViewController: UIViewController {
     }
     
     // MARK: - Private Visual Components
-    private let searchTitle: UILabel = {
+    private let searchLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 10, y: 100, width: 150, height: 30))
         label.text = Constants.searchTitle
         label.textColor = .white
@@ -53,7 +53,7 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let clearSearch: UIButton = {
+    private let clearSearchButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 280, y: 220, width: 100, height: 30))
         button.setTitle(Constants.clearTitle, for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
@@ -66,7 +66,7 @@ final class SearchViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                         action: #selector(handleTapGenture)))
+                                                         action: #selector(handleTapGentureAction)))
         return view
     }()
     
@@ -76,7 +76,7 @@ final class SearchViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                         action: #selector(handleTapGenture)))
+                                                         action: #selector(handleTapGentureAction)))
         return view
     }()
     
@@ -86,18 +86,18 @@ final class SearchViewController: UIViewController {
         view.layer.cornerRadius = 10
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                         action: #selector(handleTapGenture)))
+                                                         action: #selector(handleTapGentureAction)))
         return view
     }()
     
-    private let imageOne: UIImageView = {
+    private let imageOneView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 25, y: 290, width: 105, height: 90))
         image.image = UIImage(named: Constants.oneItemImageName)
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let oneItemName: UILabel = {
+    private let oneItemLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 20, y: 380, width: 120, height: 70))
         label.numberOfLines = 3
         label.textColor = .white
@@ -107,14 +107,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let imageTwo: UIImageView = {
+    private let imageTwoView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 175, y: 290, width: 105, height: 90))
         image.image = UIImage(named: Constants.twoItemImageName)
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let twoItemName: UILabel = {
+    private let twoItemLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 170, y: 380, width: 120, height: 70))
         label.numberOfLines = 3
         label.textColor = .white
@@ -124,14 +124,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let imageThree: UIImageView = {
+    private let imageThreeView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 325, y: 290, width: 105, height: 90))
         image.image = UIImage(named: Constants.threeItemImageName)
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private let threeItemName: UILabel = {
+    private let threeItemLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 320, y: 380, width: 120, height: 70))
         label.numberOfLines = 3
         label.textColor = .white
@@ -202,19 +202,18 @@ final class SearchViewController: UIViewController {
     }
     
     // MARK: - Private Method
-    @objc private func handleTapGenture(sender: UITapGestureRecognizer) {
-        switch sender.view?.tag {
-        case 0: showDetailVC(image: Constants.oneItemImageName, title: Constants.itemOneName)
-        case 1: showDetailVC(image: Constants.twoItemImageName, title: Constants.itemTwoName)
-        case 2: showDetailVC(image: Constants.threeItemImageName, title: Constants.itemThreeName)
-        default: break
-        }
+    @objc private func handleTapGentureAction(sender: UITapGestureRecognizer) {
+        let constants = [(Constants.oneItemImageName, Constants.itemOneName),
+                         (Constants.twoItemImageName, Constants.itemTwoName),
+                         (Constants.threeItemImageName, Constants.itemThreeName)]
+        guard let tag = sender.view?.tag else { return }
+        showDetailVC(image: constants[tag].0, title: constants[tag].1)
     }
     
     private func showDetailVC(image: String, title: String) {
         let detailsVC = DetaisViewController()
-        detailsVC.label.text = title
-        detailsVC.image.image = UIImage(named: image)
+        detailsVC.productName = title
+        detailsVC.productImage = image
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
@@ -225,19 +224,19 @@ final class SearchViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.addSubview(searchTitle)
+        view.addSubview(searchLabel)
         view.addSubview(searchBar)
         view.addSubview(recentlyTitle)
-        view.addSubview(clearSearch)
+        view.addSubview(clearSearchButton)
         view.addSubview(oneBlockView)
         view.addSubview(twoBlockView)
         view.addSubview(threeBlockView)
-        view.addSubview(imageOne)
-        view.addSubview(oneItemName)
-        view.addSubview(imageTwo)
-        view.addSubview(twoItemName)
-        view.addSubview(imageThree)
-        view.addSubview(threeItemName)
+        view.addSubview(imageOneView)
+        view.addSubview(oneItemLabel)
+        view.addSubview(imageTwoView)
+        view.addSubview(twoItemLabel)
+        view.addSubview(imageThreeView)
+        view.addSubview(threeItemLabel)
         view.addSubview(variantRequestLabel)
         view.addSubview(variantSearchImageOne)
         view.addSubview(variantRequestLabelOne)

@@ -9,6 +9,7 @@ import UIKit
 /// Для вас
 final class ForYouViewController: UIViewController {
 
+    // MARK: - Life Cucle
     override func viewDidLoad() {
         super.viewDidLoad()
 

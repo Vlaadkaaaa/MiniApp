@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// TabBatController
 final class TabBarController: UITabBarController {
     
     private enum Constants {
@@ -36,7 +37,7 @@ final class TabBarController: UITabBarController {
     private func setupUI() {
         changedColor()
         let navController = UINavigationController(rootViewController: searchVC)
-        self.setViewControllers([buyVC, forYouVC, navController, basketVC], animated: true)
+        setViewControllers([buyVC, forYouVC, navController, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: Constants.titleBuy,
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
         forYouVC.tabBarItem = UITabBarItem(title: Constants.titleForYou,
