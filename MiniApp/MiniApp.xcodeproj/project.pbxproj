@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55694CC828F466B200D052AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55694CC728F466B200D052AB /* WebViewController.swift */; };
 		55D5860028EEC8E8005DB2DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */; };
 		55D5860228EEC8E8005DB2DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5860128EEC8E8005DB2DB /* SceneDelegate.swift */; };
 		55D5860428EEC8E8005DB2DB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5860328EEC8E8005DB2DB /* TabBarController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55694CC728F466B200D052AB /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		55D585FC28EEC8E8005DB2DB /* MiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55D5860128EEC8E8005DB2DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				55D5863828EEDECE005DB2DB /* BuyViewController.swift */,
 				55D5863A28EEDEDE005DB2DB /* ForYouViewController.swift */,
 				55D5863C28EEDEF0005DB2DB /* SearchViewController.swift */,
+				55694CC728F466B200D052AB /* WebViewController.swift */,
 				55D5864028EF0554005DB2DB /* DetaisViewController.swift */,
 				55D5863E28EEDF10005DB2DB /* BasketViewController.swift */,
 			);
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D5863D28EEDEF0005DB2DB /* SearchViewController.swift in Sources */,
+				55694CC828F466B200D052AB /* WebViewController.swift in Sources */,
 				55D5860428EEC8E8005DB2DB /* TabBarController.swift in Sources */,
 				55D5863F28EEDF10005DB2DB /* BasketViewController.swift in Sources */,
 				55D5863928EEDECE005DB2DB /* BuyViewController.swift in Sources */,

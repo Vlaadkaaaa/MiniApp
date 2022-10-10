@@ -271,7 +271,7 @@ final class SearchViewController: UIViewController {
                          (Constants.twoItemImageName, Constants.itemTwoName),
                          (Constants.threeItemImageName, Constants.itemThreeName),
                          (Constants.fourItemInageName, Constants.itemFourName)]
-        guard let tag = sender.view?.tag else { return }
+         guard let tag = sender.view?.tag else { return }
         showDetailVC(image: constants[tag].0, title: constants[tag].1)
     }
     

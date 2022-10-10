@@ -63,6 +63,9 @@ final class DetaisViewController: UIViewController {
         let image = UIImageView(frame: CGRect(x: 70, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage)
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                        action: #selector(showWebSiteAction)))
         return image
     }()
     
@@ -218,24 +221,18 @@ final class DetaisViewController: UIViewController {
     // MARK: Private Methods
     private func setupUI() {
         view.backgroundColor = .black
-        view.addSubview(imageScrollView)
-        view.addSubview(productNameLabel)
-        view.addSubview(productPriceLabel)
-        view.addSubview(descriptionProdctLabel)
-        view.addSubview(chooseOneButton)
-        view.addSubview(chooseTwoButton)
-        view.addSubview(checkmarkImageView)
-        view.addSubview(compatibleWithLabel)
-        view.addSubview(compatibleMacNameLabel)
-        view.addSubview(countItemLabel)
-        view.addSubview(countItemTextField)
-        view.addSubview(openDocButton)
-        view.addSubview(addToBasketButton)
-        view.addSubview(shipingboxImageView)
-        view.addSubview(otherOneTextLabel)
-        view.addSubview(otherTwoTextLabel)
-        view.addSubview(otherThreeTextLabel)
+        let viewElements: [UIView] = [imageScrollView, productNameLabel, productPriceLabel,
+                                      descriptionProdctLabel, chooseOneButton, chooseTwoButton,
+                                      checkmarkImageView, compatibleWithLabel, compatibleMacNameLabel,
+                                      countItemLabel, countItemTextField, openDocButton, addToBasketButton,
+                                      shipingboxImageView, otherOneTextLabel, otherTwoTextLabel, otherThreeTextLabel]
+        viewElements.forEach { view.addSubview($0) }
         addRightBarItem()
+    }
+    
+    @objc private func showWebSiteAction(sender: UITapGestureRecognizer) {
+        let webSiteVC = WebViewController()
+        present(webSiteVC, animated: true)
     }
     
     private func addRightBarItem() {
