@@ -12,7 +12,7 @@ final class SearchViewController: UIViewController {
     private enum Constants {
         static let searchTitle = "Поиск"
         static let searchBarPlaceholder = "Поиск по продуктам и магазинам"
-        static let resentlyLabel = "Недавно просмотренные"
+        static let resently = "Недавно просмотренные"
         static let clearTitle = "Очистить"
         static let oneItemImageName = "case"
         static let twoItemImageName = "clock"
@@ -22,11 +22,11 @@ final class SearchViewController: UIViewController {
         static let itemTwoName = "Спортивный ремешок Black Unity (для корпуса 44мм) размер R"
         static let itemThreeName = "Кожанный чехол для MacBook Pro 16 дюймов"
         static let itemFourName = "iPhone 13"
-        static let variantSearchLabel = "Варианты запросов"
-        static let variantRequestOne = "AirPods"
-        static let variantRequestTwo = "AppleCare"
-        static let variantRequestThree = "Beats"
-        static let variantRequestFour = "Сравните модели iPhone"
+        static let variantSearchTitle = "Варианты запросов"
+        static let variantRequestOneName = "AirPods"
+        static let variantRequestTwoName = "AppleCare"
+        static let variantRequestThreeName = "Beats"
+        static let variantRequestFourName = "Сравните модели iPhone"
         static let searchImageName = "magnifyingglass"
     }
     
@@ -62,7 +62,7 @@ final class SearchViewController: UIViewController {
     
     private let recentlyTitleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 10, y: 200, width: 300, height: 30))
-        label.text = Constants.resentlyLabel
+        label.text = Constants.resently
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 21)
         return label
@@ -190,7 +190,7 @@ final class SearchViewController: UIViewController {
     
     private let variantRequestLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 10, y: 480, width: 300, height: 30))
-        label.text = Constants.variantSearchLabel
+        label.text = Constants.variantSearchTitle
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 24)
         return label
@@ -205,7 +205,7 @@ final class SearchViewController: UIViewController {
     
     private lazy var variantRequestOneLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 525, width: 250, height: 30))
-        label.text = Constants.variantRequestOne
+        label.text = Constants.variantRequestOneName
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 20)
         view.addSubview(addViewLine(yCor: 565))
@@ -221,7 +221,7 @@ final class SearchViewController: UIViewController {
     
     private lazy var variantRequestTwoLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 575, width: 250, height: 30))
-        label.text = Constants.variantRequestTwo
+        label.text = Constants.variantRequestTwoName
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 20)
         view.addSubview(addViewLine(yCor: 615))
@@ -237,7 +237,7 @@ final class SearchViewController: UIViewController {
     
     private lazy var variantRequestThreeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 625, width: 250, height: 30))
-        label.text = Constants.variantRequestThree
+        label.text = Constants.variantRequestThreeName
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 20)
         view.addSubview(addViewLine(yCor: 665))
@@ -253,7 +253,7 @@ final class SearchViewController: UIViewController {
     
     private lazy var variantRequestFourLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 675, width: 250, height: 30))
-        label.text = Constants.variantRequestFour
+        label.text = Constants.variantRequestFourName
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 20)
         view.addSubview(addViewLine(yCor: 715))
