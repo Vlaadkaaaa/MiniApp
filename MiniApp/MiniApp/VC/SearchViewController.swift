@@ -60,7 +60,7 @@ final class SearchViewController: UIViewController {
         return search
     }()
     
-    private let recentlyTitle: UILabel = {
+    private let recentlyTitleLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 10, y: 200, width: 300, height: 30))
         label.text = Constants.resentlyLabel
         label.textColor = .white
@@ -82,7 +82,7 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
-        view.addSubview(imageOneView)
+        view.addSubview(oneImageView)
         view.addSubview(oneItemLabel)
         return view
     }()
@@ -94,7 +94,7 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
-        view.addSubview(imageTwoView)
+        view.addSubview(twoImageView)
         view.addSubview(twoItemLabel)
         return view
     }()
@@ -106,7 +106,7 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
-        view.addSubview(imageThreeView)
+        view.addSubview(threeImageView)
         view.addSubview(threeItemLabel)
         return view
     }()
@@ -118,12 +118,12 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .secondaryLabel
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
-        view.addSubview(imageFourView)
+        view.addSubview(fourImageView)
         view.addSubview(fourItemLabel)
         return view
     }()
     
-    private let imageOneView: UIImageView = {
+    private let oneImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 20, width: 105, height: 90))
         image.image = UIImage(named: Constants.oneItemImageName)
         image.contentMode = .scaleAspectFit
@@ -140,7 +140,7 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let imageTwoView: UIImageView = {
+    private let twoImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 20, width: 105, height: 90))
         image.image = UIImage(named: Constants.twoItemImageName)
         image.contentMode = .scaleAspectFit
@@ -153,11 +153,10 @@ final class SearchViewController: UIViewController {
         label.textColor = .white
         label.font = .systemFont(ofSize: 13)
         label.text = Constants.itemTwoName
-        
         return label
     }()
     
-    private let imageThreeView: UIImageView = {
+    private let threeImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 20, width: 105, height: 90))
         image.image = UIImage(named: Constants.threeItemImageName)
         image.contentMode = .scaleAspectFit
@@ -173,7 +172,7 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let imageFourView: UIImageView = {
+    private let fourImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 20, width: 105, height: 90))
         image.image = UIImage(named: Constants.fourItemInageName)
         image.contentMode = .scaleAspectFit
@@ -197,14 +196,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let variantSearchImageOne: UIImageView = {
+    private let variantSearchOneImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 530, width: 20, height: 20))
         image.image = UIImage(systemName: Constants.searchImageName)
         image.tintColor = .darkGray
         return image
     }()
     
-    private lazy var variantRequestLabelOne: UILabel = {
+    private lazy var variantRequestOneLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 525, width: 250, height: 30))
         label.text = Constants.variantRequestOne
         label.textColor = .lightGray
@@ -213,14 +212,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let variantSearchImageTwo: UIImageView = {
+    private let variantSearchTwoImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 580, width: 20, height: 20))
         image.image = UIImage(systemName: Constants.searchImageName)
         image.tintColor = .darkGray
         return image
     }()
     
-    private lazy var variantRequestLabelTwo: UILabel = {
+    private lazy var variantRequestTwoLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 575, width: 250, height: 30))
         label.text = Constants.variantRequestTwo
         label.textColor = .lightGray
@@ -229,14 +228,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let variantSearchImageThree: UIImageView = {
+    private let variantSearchThreeImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 630, width: 20, height: 20))
         image.image = UIImage(systemName: Constants.searchImageName)
         image.tintColor = .darkGray
         return image
     }()
     
-    private lazy var variantRequestLabelThree: UILabel = {
+    private lazy var variantRequestThreeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 625, width: 250, height: 30))
         label.text = Constants.variantRequestThree
         label.textColor = .lightGray
@@ -245,14 +244,14 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    private let variantSearchImageFour: UIImageView = {
+    private let variantSearchFourImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 15, y: 680, width: 20, height: 20))
         image.image = UIImage(systemName: Constants.searchImageName)
         image.tintColor = .darkGray
         return image
     }()
     
-    private lazy var variantRequestLabelFour: UILabel = {
+    private lazy var variantRequestFourLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 45, y: 675, width: 250, height: 30))
         label.text = Constants.variantRequestFour
         label.textColor = .lightGray
@@ -264,7 +263,6 @@ final class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     // MARK: - Private Method
@@ -295,16 +293,17 @@ final class SearchViewController: UIViewController {
         view.addSubview(imageItemScrollView)
         view.addSubview(searchLabel)
         view.addSubview(searchBar)
-        view.addSubview(recentlyTitle)
+        view.addSubview(recentlyTitleLabel)
         view.addSubview(clearSearchButton)
         view.addSubview(variantRequestLabel)
-        view.addSubview(variantSearchImageOne)
-        view.addSubview(variantRequestLabelOne)
-        view.addSubview(variantRequestLabelTwo)
-        view.addSubview(variantSearchImageTwo)
-        view.addSubview(variantSearchImageThree)
-        view.addSubview(variantRequestLabelThree)
-        view.addSubview(variantRequestLabelFour)
-        view.addSubview(variantSearchImageFour)
+        view.addSubview(variantSearchOneImageView)
+        view.addSubview(variantRequestLabel)
+        view.addSubview(variantRequestOneLabel)
+        view.addSubview(variantRequestTwoLabel)
+        view.addSubview(variantSearchTwoImageView)
+        view.addSubview(variantSearchThreeImageView)
+        view.addSubview(variantRequestThreeLabel)
+        view.addSubview(variantRequestFourLabel)
+        view.addSubview(variantSearchFourImageView)
     }
 }

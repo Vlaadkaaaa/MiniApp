@@ -34,9 +34,9 @@ final class DetaisViewController: UIViewController {
         scrollView.contentSize = CGSize(width: 390 * 3, height: 250)
         scrollView.isPagingEnabled = true
         scrollView.indicatorStyle = .white
-        scrollView.addSubview(productImageOne)
-        scrollView.addSubview(productImageTwo)
-        scrollView.addSubview(productImageThree)
+        scrollView.addSubview(productOneImageView)
+        scrollView.addSubview(productTwoImageView)
+        scrollView.addSubview(productThreeImageView)
         return scrollView
     }()
     
@@ -59,19 +59,21 @@ final class DetaisViewController: UIViewController {
         return label
     }()
     
-    private lazy var productImageOne: UIImageView = {
+    private lazy var productOneImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 70, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage)
         return image
     }()
-    private lazy var productImageTwo: UIImageView = {
+    
+    private lazy var productTwoImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 460, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage + "2")
         return image
     }()
-    private lazy var productImageThree: UIImageView = {
+    
+    private lazy var productThreeImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 850, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage + "3")
@@ -182,6 +184,7 @@ final class DetaisViewController: UIViewController {
         image.tintColor = .gray
         return image
     }()
+    
     private let otherOneTextLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 690, width: 300, height: 15))
         label.text = Constants.otherTextOne
