@@ -55,8 +55,8 @@
 				55D5863828EEDECE005DB2DB /* BuyViewController.swift */,
 				55D5863A28EEDEDE005DB2DB /* ForYouViewController.swift */,
 				55D5863C28EEDEF0005DB2DB /* SearchViewController.swift */,
-				55694CC728F466B200D052AB /* WebViewController.swift */,
 				55D5864028EF0554005DB2DB /* DetaisViewController.swift */,
+				55694CC728F466B200D052AB /* WebViewController.swift */,
 				55D5863E28EEDF10005DB2DB /* BasketViewController.swift */,
 			);
 			path = VC;

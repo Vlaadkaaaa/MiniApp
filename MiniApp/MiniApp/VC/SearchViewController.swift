@@ -290,20 +290,12 @@ final class SearchViewController: UIViewController {
     
     private func setupUI() {
         title = Constants.searchTitle
-        view.addSubview(imageItemScrollView)
-        view.addSubview(searchLabel)
-        view.addSubview(searchBar)
-        view.addSubview(recentlyTitleLabel)
-        view.addSubview(clearSearchButton)
-        view.addSubview(variantRequestLabel)
-        view.addSubview(variantSearchOneImageView)
-        view.addSubview(variantRequestLabel)
-        view.addSubview(variantRequestOneLabel)
-        view.addSubview(variantRequestTwoLabel)
-        view.addSubview(variantSearchTwoImageView)
-        view.addSubview(variantSearchThreeImageView)
-        view.addSubview(variantRequestThreeLabel)
-        view.addSubview(variantRequestFourLabel)
-        view.addSubview(variantSearchFourImageView)
+        let viewElements: [UIView] = [imageItemScrollView, searchLabel, searchBar,
+                                      recentlyTitleLabel, clearSearchButton, variantRequestLabel,
+                                      variantSearchOneImageView, variantRequestLabel, variantRequestOneLabel,
+                                      variantRequestTwoLabel, variantSearchTwoImageView, variantSearchThreeImageView,
+                                      variantRequestThreeLabel, variantRequestFourLabel, variantSearchFourImageView]
+
+        viewElements.forEach { view.addSubview($0) }
     }
 }

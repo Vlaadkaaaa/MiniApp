@@ -54,7 +54,6 @@ final class DetaisViewController: UIViewController {
         let label = UILabel(frame: CGRect(x: 135, y: 135, width: 120, height: 30))
         label.text = Constants.productPrice
         label.textAlignment = .center
-        
         label.textColor = .gray
         return label
     }()
@@ -64,8 +63,9 @@ final class DetaisViewController: UIViewController {
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage)
         image.isUserInteractionEnabled = true
+        image.tag = 0
         image.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                        action: #selector(showWebSiteAction)))
+                                                          action: #selector(showWebSiteAction)))
         return image
     }()
     
@@ -73,6 +73,9 @@ final class DetaisViewController: UIViewController {
         let image = UIImageView(frame: CGRect(x: 460, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage + "2")
+        image.tag = 1
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                          action: #selector(showWebSiteAction)))
         return image
     }()
     
@@ -80,6 +83,9 @@ final class DetaisViewController: UIViewController {
         let image = UIImageView(frame: CGRect(x: 850, y: 20, width: 250, height: 200))
         image.contentMode = .scaleAspectFit
         image.image = UIImage(named: productImage + "3")
+        image.tag = 2
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                          action: #selector(showWebSiteAction)))
         return image
     }()
     
@@ -231,7 +237,12 @@ final class DetaisViewController: UIViewController {
     }
     
     @objc private func showWebSiteAction(sender: UITapGestureRecognizer) {
+        let imageView = sender.view as? UIImageView
+        guard let tagImageView = imageView?.tag else { return }
         let webSiteVC = WebViewController()
+        print(productTwoImageView.tag)
+        print(tagImageView)
+        webSiteVC.itemCount = tagImageView
         present(webSiteVC, animated: true)
     }
     
