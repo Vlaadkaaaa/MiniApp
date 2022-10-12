@@ -23,6 +23,7 @@ final class WebViewController: UIViewController {
         static let itemTwoName = "Спортивный ремешок Black Unity (для корпуса 44мм) размер R"
         static let itemThreeName = "Кожанный чехол для MacBook Pro 16 дюймов"
         static let itemFourName = "iPhone 13"
+        static let formatPdfName = "pdf"
     }
     
     // MARK: - Public Property
@@ -125,15 +126,21 @@ final class WebViewController: UIViewController {
     
     private func checkLoadWebSite() {
         if !openDoc.isEmpty {
-            guard let request = Bundle.main.url(forResource: openDoc, withExtension: "pdf") else { return }
+            guard let request = Bundle.main.url(forResource: openDoc,
+                                                withExtension: Constants.formatPdfName) else { return }
             webView.load(URLRequest(url: request))
         } else {
             switch itemName {
-            case Constants.itemOneName: loadWebSite(urlString: Constants.urlCase)
-            case Constants.itemTwoName: loadWebSite(urlString: Constants.urlWatch)
-            case Constants.itemThreeName: loadWebSite(urlString: Constants.urlReStore)
-            case Constants.itemFourName: loadWebSite(urlString: Constants.urliPhone)
-            default: loadWebSite(urlString: Constants.urlReStore)
+            case Constants.itemOneName:
+                loadWebSite(urlString: Constants.urlCase)
+            case Constants.itemTwoName:
+                loadWebSite(urlString: Constants.urlWatch)
+            case Constants.itemThreeName:
+                loadWebSite(urlString: Constants.urlReStore)
+            case Constants.itemFourName:
+                loadWebSite(urlString: Constants.urliPhone)
+            default:
+                loadWebSite(urlString: Constants.urlReStore)
             }
         }
     }
@@ -157,9 +164,7 @@ final class WebViewController: UIViewController {
     }
     private func setupUI() {
         view.backgroundColor = .white
-        let viewElements: [UIView] = [webView, toolBar
-        ]
-        
+        let viewElements: [UIView] = [webView, toolBar]
         viewElements.forEach { view.addSubview($0) }
         createTimerForProgressView()
     }

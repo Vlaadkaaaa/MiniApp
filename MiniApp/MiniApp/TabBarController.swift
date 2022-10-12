@@ -41,9 +41,9 @@ final class TabBarController: UITabBarController {
         setViewControllers([buyVC, navControllerTwo, navControllerOne, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: Constants.titleBuy,
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
-        forYouVC.tabBarItem = UITabBarItem(title: Constants.titleForYou,
+        navControllerTwo.tabBarItem = UITabBarItem(title: Constants.titleForYou,
                                            image: UIImage(systemName: "person.crop.circle"), tag: 1)
-        searchVC.tabBarItem = UITabBarItem(title: Constants.titleSearch,
+        navControllerOne.tabBarItem = UITabBarItem(title: Constants.titleSearch,
                                            image: UIImage(systemName: "magnifyingglass"), tag: 2)
         basketVC.tabBarItem = UITabBarItem(title: Constants.titleBasket, image: UIImage(systemName: "bag"), tag: 3)
     }

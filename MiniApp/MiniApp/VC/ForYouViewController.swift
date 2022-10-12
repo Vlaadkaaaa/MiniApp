@@ -7,7 +7,7 @@
 
 import UIKit
 /// Для вас
-final class ForYouViewController: UIViewController, UINavigationControllerDelegate {
+final class ForYouViewController: UIViewController {
     
     // MARK: Private Enum Constant
     private enum Constant {
@@ -75,7 +75,7 @@ final class ForYouViewController: UIViewController, UINavigationControllerDelega
             itemImageView, orderStatusLabel, deliveryItemCountLabel,
             deliveryProgressView, deliveryStatusOneLabel, deliveryStatusTwoLabel, deliveryStatusThreeLabel]
         
-        deliveryItems.forEach { view.addSubview($0)}
+        deliveryItems.forEach { view.addSubview($0) }
         return view
     }()
     
@@ -187,7 +187,6 @@ final class ForYouViewController: UIViewController, UINavigationControllerDelega
     }
     
     // MARK: - Private Methods
-    
     private func setupUI() {
         view.backgroundColor = .white
         view.addSubview(scrollView)
@@ -210,7 +209,8 @@ final class ForYouViewController: UIViewController, UINavigationControllerDelega
     }
 }
 
-extension ForYouViewController: UIImagePickerControllerDelegate {
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension ForYouViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image =  info[.editedImage] as? UIImage else { return }
