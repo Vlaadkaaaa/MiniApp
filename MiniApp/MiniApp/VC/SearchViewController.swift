@@ -28,6 +28,7 @@ final class SearchViewController: UIViewController {
         static let variantRequestThreeName = "Beats"
         static let variantRequestFourName = "Сравните модели iPhone"
         static let searchImageName = "magnifyingglass"
+        static let grayColorNamed = "GrayColor"
     }
     
     // MARK: - Private Visual Components
@@ -79,7 +80,7 @@ final class SearchViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 10, y: 0, width: 135, height: 180))
         view.tag = 0
         view.layer.cornerRadius = 10
-        view.backgroundColor = .secondaryLabel
+        view.backgroundColor = UIColor(named: Constants.grayColorNamed)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
         view.addSubview(oneImageView)
@@ -91,7 +92,7 @@ final class SearchViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 160, y: 0, width: 135, height: 180))
         view.tag = 1
         view.layer.cornerRadius = 10
-        view.backgroundColor = .secondaryLabel
+        view.backgroundColor = UIColor(named: Constants.grayColorNamed)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
         view.addSubview(twoImageView)
@@ -103,7 +104,7 @@ final class SearchViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 310, y: 0, width: 135, height: 180))
         view.tag = 2
         view.layer.cornerRadius = 10
-        view.backgroundColor = .secondaryLabel
+        view.backgroundColor = UIColor(named: Constants.grayColorNamed)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
         view.addSubview(threeImageView)
@@ -115,7 +116,7 @@ final class SearchViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 460, y: 0, width: 135, height: 180))
         view.tag = 3
         view.layer.cornerRadius = 10
-        view.backgroundColor = .secondaryLabel
+        view.backgroundColor = UIColor(named: Constants.grayColorNamed)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                          action: #selector(handleTapGentureAction)))
         view.addSubview(fourImageView)

@@ -36,8 +36,9 @@ final class TabBarController: UITabBarController {
     // MARK: Private Method
     private func setupUI() {
         changedColor()
-        let navController = UINavigationController(rootViewController: searchVC)
-        setViewControllers([buyVC, forYouVC, navController, basketVC], animated: true)
+        let navControllerOne = UINavigationController(rootViewController: searchVC)
+        let navControllerTwo = UINavigationController(rootViewController: forYouVC)
+        setViewControllers([buyVC, navControllerTwo, navControllerOne, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: Constants.titleBuy,
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
         forYouVC.tabBarItem = UITabBarItem(title: Constants.titleForYou,

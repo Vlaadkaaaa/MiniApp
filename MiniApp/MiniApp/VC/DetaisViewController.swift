@@ -10,25 +10,26 @@ import UIKit
 final class DetaisViewController: UIViewController {
     // MARK: PRivate Constants
     private enum Constants {
-        static let productPrice = "3 900.00 руб."
-        static let compatibleWith = "Совместимо с "
-        static let compatibleMacName = "MacBook Air — Vladka"
-        static let countItem =  "Введите количество товароа"
+        static let productPriceTitle = "3 900.00 руб."
+        static let compatibleWithTitle = "Совместимо с "
+        static let compatibleMacTitle = "MacBook Air — Vladka"
+        static let countItemTitle =  "Введите количество товароа"
         static let titleButton = "Добавить в корзину"
-        static let openDocName = "doc"
+        static let openDocImageName = "doc"
         static let checkmarkImageName = "checkmark.circle.fill"
-        static let otherTextOne = "Заказ сегодня в течении дня, доставка:"
-        static let otherTextTwo = "Чт 13 октября - Бесплатно"
-        static let otherTextThree = "Варианты доставки до местоположения: 115533"
-        static let shippingboxName = "shippingbox"
-        static let heartImageName = "heart"
+        static let otherTextOneTitle = "Заказ сегодня в течении дня, доставка:"
+        static let otherTextTwoTitle = "Чт 13 октября - Бесплатно"
+        static let otherTextThreeTitle = "Варианты доставки до местоположения: 115533"
+        static let shippingboxImageName = "shippingbox"
+        static let heartImageImageName = "heart"
+        static let pdfDocName = "UIKit_DZ"
     }
     
     // MARK: - Public Properties
     var productImage = ""
     var productName = ""
     
-    // MARK: - Visual Component
+    // MARK: - Private Visual Component
     private lazy var imageScrollView: UIScrollView = {
         var scrollView = UIScrollView(frame: CGRect(x: 0, y: 170, width: 390, height: 250))
         scrollView.contentSize = CGSize(width: 390 * 3, height: 250)
@@ -52,7 +53,7 @@ final class DetaisViewController: UIViewController {
     
     private let productPriceLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 135, y: 135, width: 120, height: 30))
-        label.text = Constants.productPrice
+        label.text = Constants.productPriceTitle
         label.textAlignment = .center
         label.textColor = .gray
         return label
@@ -142,7 +143,7 @@ final class DetaisViewController: UIViewController {
     
     private let compatibleWithLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 100, y: 530, width: 90, height: 20))
-        label.text = Constants.compatibleWith
+        label.text = Constants.compatibleWithTitle
         label.textColor = .gray
         label.font = .systemFont(ofSize: 12)
         return label
@@ -150,7 +151,7 @@ final class DetaisViewController: UIViewController {
     
     private let compatibleMacNameLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 190, y: 530, width: 150, height: 20))
-        label.text = Constants.compatibleMacName
+        label.text = Constants.compatibleMacTitle
         label.textColor = .systemBlue
         label.font = .systemFont(ofSize: 12)
         return label
@@ -160,7 +161,7 @@ final class DetaisViewController: UIViewController {
         let label = UILabel(frame: CGRect(x: 40, y: 580, width: 330, height: 25))
         label.textColor = .white
         label.font = .systemFont(ofSize: 14)
-        label.text = Constants.countItem
+        label.text = Constants.countItemTitle
         return label
     }()
     
@@ -171,10 +172,12 @@ final class DetaisViewController: UIViewController {
         return textField
     }()
     
-    private let openDocButton: UIButton = {
+    private lazy var openDocButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 315, y: 580, width: 25, height: 25))
-        button.setImage(UIImage(systemName: Constants.openDocName), for: .normal)
+        button.setImage(UIImage(systemName: Constants.openDocImageName), for: .normal)
         button.tintColor = .white
+        button.tag = 2
+        button.addTarget(self, action: #selector(chooseItemColorAction), for: .allTouchEvents)
         return button
     }()
     
@@ -189,14 +192,14 @@ final class DetaisViewController: UIViewController {
     
     private let shipingboxImageView: UIImageView = {
         let image = UIImageView(frame: CGRect(x: 20, y: 690, width: 20, height: 20))
-        image.image = UIImage(systemName: Constants.shippingboxName)
+        image.image = UIImage(systemName: Constants.shippingboxImageName)
         image.tintColor = .gray
         return image
     }()
     
     private let otherOneTextLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 690, width: 300, height: 15))
-        label.text = Constants.otherTextOne
+        label.text = Constants.otherTextOneTitle
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 11)
         return label
@@ -204,7 +207,7 @@ final class DetaisViewController: UIViewController {
     
     private let otherTwoTextLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 705, width: 300, height: 15))
-        label.text = Constants.otherTextTwo
+        label.text = Constants.otherTextTwoTitle
         label.textColor = .gray
         label.font = .systemFont(ofSize: 11)
         return label
@@ -212,7 +215,7 @@ final class DetaisViewController: UIViewController {
     
     private let otherThreeTextLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 720, width: 310, height: 15))
-        label.text = Constants.otherTextThree
+        label.text = Constants.otherTextThreeTitle
         label.textColor = .systemBlue
         label.font = .systemFont(ofSize: 11)
         return label
@@ -237,18 +240,14 @@ final class DetaisViewController: UIViewController {
     }
     
     @objc private func showWebSiteAction(sender: UITapGestureRecognizer) {
-        let imageView = sender.view as? UIImageView
-        guard let tagImageView = imageView?.tag else { return }
         let webSiteVC = WebViewController()
-        print(productTwoImageView.tag)
-        print(tagImageView)
-        webSiteVC.itemCount = tagImageView
+        webSiteVC.itemName = productName
         present(webSiteVC, animated: true)
     }
     
     private func addRightBarItem() {
         let shareButton = UIBarButtonItem(systemItem: .action)
-        let heartButton = UIBarButtonItem(image: UIImage(systemName: Constants.heartImageName),
+        let heartButton = UIBarButtonItem(image: UIImage(systemName: Constants.heartImageImageName),
                                           style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItems = [heartButton, shareButton]
     }
@@ -256,5 +255,11 @@ final class DetaisViewController: UIViewController {
     @objc private func chooseItemColorAction(sender: UIButton) {
         chooseOneButton.layer.shadowRadius = sender === chooseOneButton ? 3 : 0
         chooseTwoButton.layer.shadowRadius = sender === chooseTwoButton ? 3 : 0
+        
+        if sender.tag == 2 {
+            let webVC = WebViewController()
+            webVC.openDoc = Constants.pdfDocName
+            present(webVC, animated: true)
+        }
     }
 }

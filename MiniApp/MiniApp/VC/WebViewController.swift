@@ -10,8 +10,6 @@ import WebKit
 /// Внутренний браузер
 final class WebViewController: UIViewController {
     
-    var itemCount = 0
-    
     // MARK: - Private Constants
     private enum Constants {
         static let urlReStore = "https://re-store.ru"
@@ -21,7 +19,15 @@ final class WebViewController: UIViewController {
         static let squareImage = "square.and.arrow.up"
         static let leftImage = "chevron.left"
         static let rightImage = "chevron.right"
+        static let itemOneName = "Чехол Incase Flat для MacBook Pro 16 дюймов"
+        static let itemTwoName = "Спортивный ремешок Black Unity (для корпуса 44мм) размер R"
+        static let itemThreeName = "Кожанный чехол для MacBook Pro 16 дюймов"
+        static let itemFourName = "iPhone 13"
     }
+    
+    // MARK: - Public Property
+    var itemName = ""
+    var openDoc = ""
     
     // MARK: Private VisualComponents
     private lazy var webView: WKWebView = {
@@ -118,12 +124,17 @@ final class WebViewController: UIViewController {
     }
     
     private func checkLoadWebSite() {
-        switch itemCount {
-        case 0: loadWebSite(urlString: Constants.urlCase)
-        case 1: loadWebSite(urlString: Constants.urlWatch)
-        case 2: loadWebSite(urlString: Constants.urliPhone)
-        default: loadWebSite(urlString: Constants.urlReStore)
-            
+        if !openDoc.isEmpty {
+            guard let request = Bundle.main.url(forResource: openDoc, withExtension: "pdf") else { return }
+            webView.load(URLRequest(url: request))
+        } else {
+            switch itemName {
+            case Constants.itemOneName: loadWebSite(urlString: Constants.urlCase)
+            case Constants.itemTwoName: loadWebSite(urlString: Constants.urlWatch)
+            case Constants.itemThreeName: loadWebSite(urlString: Constants.urlReStore)
+            case Constants.itemFourName: loadWebSite(urlString: Constants.urliPhone)
+            default: loadWebSite(urlString: Constants.urlReStore)
+            }
         }
     }
     
