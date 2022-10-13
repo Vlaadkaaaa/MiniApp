@@ -36,13 +36,14 @@ final class TabBarController: UITabBarController {
     // MARK: Private Method
     private func setupUI() {
         changedColor()
-        let navController = UINavigationController(rootViewController: searchVC)
-        setViewControllers([buyVC, forYouVC, navController, basketVC], animated: true)
+        let navControllerOne = UINavigationController(rootViewController: searchVC)
+        let navControllerTwo = UINavigationController(rootViewController: forYouVC)
+        setViewControllers([buyVC, navControllerTwo, navControllerOne, basketVC], animated: true)
         buyVC.tabBarItem = UITabBarItem(title: Constants.titleBuy,
                                         image: UIImage(systemName: "laptopcomputer.and.iphone"), tag: 0)
-        forYouVC.tabBarItem = UITabBarItem(title: Constants.titleForYou,
+        navControllerTwo.tabBarItem = UITabBarItem(title: Constants.titleForYou,
                                            image: UIImage(systemName: "person.crop.circle"), tag: 1)
-        searchVC.tabBarItem = UITabBarItem(title: Constants.titleSearch,
+        navControllerOne.tabBarItem = UITabBarItem(title: Constants.titleSearch,
                                            image: UIImage(systemName: "magnifyingglass"), tag: 2)
         basketVC.tabBarItem = UITabBarItem(title: Constants.titleBasket, image: UIImage(systemName: "bag"), tag: 3)
     }
