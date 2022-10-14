@@ -29,17 +29,17 @@ final class ForYouViewController: UIViewController {
     }
     
     // MARK: Private VisualComponent
-    private lazy var avatarView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        view.addSubview(avatarButton)
-        return view
-    }()
-    
-    private lazy var avatarButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 40, width: 50, height: 50))
-        button.setImage(UIImage(named: Constant.avatarImageName), for: .normal)
-        button.addTarget(self, action: #selector(setupAvatarAction), for: .allTouchEvents)
-        return button
+    private lazy var avatarImageView: UIImageView = {
+        let image = UIImageView(frame: CGRect(x: 340, y: 40, width: 40, height: 40))
+        image.layer.cornerRadius = 20
+        image.clipsToBounds = true
+        image.image = UIImage(named: Constant.avatarImageName)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(setupAvatarAction))
+        image.addGestureRecognizer(tapGestureRecognizer)
+        image.isUserInteractionEnabled = true
+        
+        return image
     }()
     
     private lazy var scrollView: UIScrollView = {
@@ -191,8 +191,20 @@ final class ForYouViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(scrollView)
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.addSubview(avatarImageView)
         title = Constant.forYouTitle
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: avatarView)
+        
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        // Constrains
+        avatarImageView.trailingAnchor.constraint(
+            equalTo: navigationController?.navigationBar.trailingAnchor ?? UINavigationBar().trailingAnchor,
+            constant: -20).isActive = true
+        avatarImageView.bottomAnchor.constraint(
+            equalTo: navigationController?.navigationBar.bottomAnchor ?? UINavigationBar().bottomAnchor,
+            constant: -5).isActive = true
+        avatarImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        avatarImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
     }
     
     private func addLineView(frame: CGRect) -> UIView {
@@ -215,7 +227,7 @@ extension ForYouViewController: UIImagePickerControllerDelegate, UINavigationCon
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let image =  info[.editedImage] as? UIImage else { return }
         let img = image.resizeImage(to: CGSize(width: 30, height: 30))
-        avatarButton.setImage(img, for: .normal)
+        avatarImageView.image = img
         dismiss(animated: true)
     }
 }
