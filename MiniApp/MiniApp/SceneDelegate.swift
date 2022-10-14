@@ -14,8 +14,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
+        var navigationController = UINavigationController()
         let tabBarController = TabBarController()
-        window?.rootViewController = tabBarController
+        let pageVC = PageViewController()
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.object(forKey: "true") == nil {
+            navigationController = UINavigationController(rootViewController: pageVC)
+        } else {
+            navigationController = UINavigationController(rootViewController: tabBarController)
+        }
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.backgroundColor = .black
         
