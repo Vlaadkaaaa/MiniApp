@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		55694CC828F466B200D052AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55694CC728F466B200D052AB /* WebViewController.swift */; };
-		55C86C4228F68E39005C111A /* UIKit_DZ.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 55C86C4128F68E39005C111A /* UIKit_DZ.pdf */; };
 		55C86C4428F68FF1005C111A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C86C4328F68FF1005C111A /* Colors.xcassets */; };
 		55D5860028EEC8E8005DB2DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */; };
 		55D5860228EEC8E8005DB2DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D5860128EEC8E8005DB2DB /* SceneDelegate.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		55694CC728F466B200D052AB /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		55C86C4128F68E39005C111A /* UIKit_DZ.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = UIKit_DZ.pdf; sourceTree = "<group>"; };
 		55C86C4328F68FF1005C111A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55D585FC28EEC8E8005DB2DB /* MiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				55D5860328EEC8E8005DB2DB /* TabBarController.swift */,
 				558FA54628F0680300AE3775 /* VC */,
 				55D5860528EEC8E8005DB2DB /* Main.storyboard */,
-				55C86C4128F68E39005C111A /* UIKit_DZ.pdf */,
 				55C86C4328F68FF1005C111A /* Colors.xcassets */,
 				55D5860828EEC8EB005DB2DB /* Assets.xcassets */,
 				55D5860A28EEC8EB005DB2DB /* LaunchScreen.storyboard */,
@@ -162,7 +159,6 @@
 				55D5860C28EEC8EB005DB2DB /* LaunchScreen.storyboard in Resources */,
 				55D5860928EEC8EB005DB2DB /* Assets.xcassets in Resources */,
 				55D5860728EEC8E8005DB2DB /* Main.storyboard in Resources */,
-				55C86C4228F68E39005C111A /* UIKit_DZ.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
