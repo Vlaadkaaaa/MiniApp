@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 /// Определяет какая страница будет загружена в данный момент
 final class PageViewController: UIPageViewController {
     
@@ -67,12 +68,12 @@ final class PageViewController: UIPageViewController {
               let pageThree = UIImage(named: Constants.pageThreeImageName) else {
             return pages
         }
-        let firstPage = PageHelper(image: pageOne, titleLabel: Constants.titlePageOneText,
-                                   subTitleLabel: Constants.subTitlePageOneText)
-        let secondPage = PageHelper(image: pageTwo, titleLabel: Constants.titlePageTwoText,
-                                    subTitleLabel: Constants.subTitlePageTwoText)
-        let lastPage = PageHelper(image: pageThree, titleLabel: Constants.titlePageThreeText,
-                                  subTitleLabel: Constants.subTitlePageThreeText)
+        let firstPage = PageHelper(image: pageOne, title: Constants.titlePageOneText,
+                                   subTitle: Constants.subTitlePageOneText)
+        let secondPage = PageHelper(image: pageTwo, title: Constants.titlePageTwoText,
+                                    subTitle: Constants.subTitlePageTwoText)
+        let lastPage = PageHelper(image: pageThree, title: Constants.titlePageThreeText,
+                                  subTitle: Constants.subTitlePageThreeText)
         
         pages.append(VCForPageViewController(pageWith: firstPage))
         pages.append(VCForPageViewController(pageWith: secondPage))

@@ -6,9 +6,9 @@
 //
 ///
 import UIKit
-///   Model?
+///   PageHelper
 struct PageHelper {
     var image = UIImage()
-    var titleLabel = String()
-    var subTitleLabel = String()
+    var title = String()
+    var subTitle = String()
 }
