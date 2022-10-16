@@ -8,14 +8,27 @@
 import UIKit
 ///
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    private enum Constant {
+        static let keyUserDefaults = "true"
+    }
 
     var window: UIWindow?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
+        var navigationController = UINavigationController()
         let tabBarController = TabBarController()
-        window?.rootViewController = tabBarController
+        let pageVC = PageViewController()
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.object(forKey: Constant.keyUserDefaults) == nil {
+            navigationController = UINavigationController(rootViewController: pageVC)
+        } else {
+            navigationController = UINavigationController(rootViewController: tabBarController)
+        }
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         window?.backgroundColor = .black
         

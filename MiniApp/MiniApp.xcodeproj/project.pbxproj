@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554843CE28F9150B003AC8A3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554843CD28F9150B003AC8A3 /* PageViewController.swift */; };
+		554843D028F91575003AC8A3 /* PageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554843CF28F91575003AC8A3 /* PageHelper.swift */; };
+		554843D228F915DF003AC8A3 /* VCForPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554843D128F915DF003AC8A3 /* VCForPageViewController.swift */; };
+		554843D728F91C01003AC8A3 /* UIPageVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554843D628F91C01003AC8A3 /* UIPageVCExtension.swift */; };
 		55694CC828F466B200D052AB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55694CC728F466B200D052AB /* WebViewController.swift */; };
 		55C86C4428F68FF1005C111A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C86C4328F68FF1005C111A /* Colors.xcassets */; };
 		55D5860028EEC8E8005DB2DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		554843CD28F9150B003AC8A3 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		554843CF28F91575003AC8A3 /* PageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHelper.swift; sourceTree = "<group>"; };
+		554843D128F915DF003AC8A3 /* VCForPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCForPageViewController.swift; sourceTree = "<group>"; };
+		554843D628F91C01003AC8A3 /* UIPageVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageVCExtension.swift; sourceTree = "<group>"; };
 		55694CC728F466B200D052AB /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		55C86C4328F68FF1005C111A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55D585FC28EEC8E8005DB2DB /* MiniApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,9 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		554843D528F91BA2003AC8A3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				554843D628F91C01003AC8A3 /* UIPageVCExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		558FA54628F0680300AE3775 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				554843CD28F9150B003AC8A3 /* PageViewController.swift */,
+				554843D128F915DF003AC8A3 /* VCForPageViewController.swift */,
 				55D5863828EEDECE005DB2DB /* BuyViewController.swift */,
 				55D5863A28EEDEDE005DB2DB /* ForYouViewController.swift */,
 				55D5863C28EEDEF0005DB2DB /* SearchViewController.swift */,
@@ -86,6 +104,8 @@
 				55D585FF28EEC8E8005DB2DB /* AppDelegate.swift */,
 				55D5860128EEC8E8005DB2DB /* SceneDelegate.swift */,
 				55D5860328EEC8E8005DB2DB /* TabBarController.swift */,
+				554843CF28F91575003AC8A3 /* PageHelper.swift */,
+				554843D528F91BA2003AC8A3 /* Extension */,
 				558FA54628F0680300AE3775 /* VC */,
 				55D5860528EEC8E8005DB2DB /* Main.storyboard */,
 				55C86C4328F68FF1005C111A /* Colors.xcassets */,
@@ -191,9 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D5863D28EEDEF0005DB2DB /* SearchViewController.swift in Sources */,
+				554843CE28F9150B003AC8A3 /* PageViewController.swift in Sources */,
 				55694CC828F466B200D052AB /* WebViewController.swift in Sources */,
+				554843D728F91C01003AC8A3 /* UIPageVCExtension.swift in Sources */,
 				55D5860428EEC8E8005DB2DB /* TabBarController.swift in Sources */,
+				554843D228F915DF003AC8A3 /* VCForPageViewController.swift in Sources */,
 				55D5863F28EEDF10005DB2DB /* BasketViewController.swift in Sources */,
+				554843D028F91575003AC8A3 /* PageHelper.swift in Sources */,
 				55D5863928EEDECE005DB2DB /* BuyViewController.swift in Sources */,
 				55D5860028EEC8E8005DB2DB /* AppDelegate.swift in Sources */,
 				55D5863B28EEDEDE005DB2DB /* ForYouViewController.swift in Sources */,
